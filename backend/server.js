@@ -2,14 +2,17 @@
 const express = require("express")
 const cors = require("cors")
 const mongoose = require("mongoose")
+const cookie_pareser = require("cookie-parser")
 require("dotenv").config()
 const app = express()
 const port = process.env.PORT || 5000
 const homepage = require("./Routes/homepage")
+const auth = require('./Routes/Auth')
 
 //middlewares
 app.use(cors())
 app.use(express.json())
+app.use(cookie_pareser())
 
 //connect to DB
 const uri = process.env.ATLAS_URI
@@ -29,7 +32,7 @@ connection.once('open', ()=> {
 
 //route  middleware
 app.use('/portfolio',homepage)
-
+app.use('/admin', auth)
 
 app.listen(port, () => {
      console.log(`listening to port : ${port}`)

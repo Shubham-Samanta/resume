@@ -1,9 +1,10 @@
 const router = require("express").Router()
-const User=require("../Models/user.model")
+const Userdata=require("../Models/user.model")
 const Project = require("../Models/project.model")
-const{userValidation,projectValidation}=require("../Models/Validation")
+const { userValidation, projectValidation } = require("../Models/Validation")
+const verify =require("../middleware/verifyToken")
 router.get('/',async (req, res) => {
-     const User = await User.find()
+     const User = await Userdata.find()
      if (!User)
      {
           res.send("something is wrong")
@@ -17,7 +18,7 @@ router.get('/',async (req, res) => {
      }
 })
 
-router.post('/add/user', async (req, res) => {
+router.post('/add/user',verify, async (req, res) => {
      const {error}=userValidation(req.body)
      if (error)
      {
@@ -35,21 +36,21 @@ router.post('/add/user', async (req, res) => {
           const linkedin_link = req.body.linkedin_link
           const facebook_link = req.body.facebook_link
           const insta_link = req.body.insta_link
-          const newUser = new User({
+          const newUserdata = new Userdata({
                name, about_me_1, about_me_2, get_in_touch,email,phone,git_link,
                linkedin_link,
                facebook_link,
                insta_link,})
           try {
-               const info = await newUser.save()
-               res.json('user added')
+               const info = await newUserdata.save()
+               res.json('user data added')
           }
                catch(err){res.status(400).json(err)}  
           }
      
 })
 
-router.post('/add/project', async (req, res) => {
+router.post('/add/project',verify, async (req, res) => {
      const {error}=projectValidation(req.body)
      if (error) {
           res.status(400).send(error.details[0].message)

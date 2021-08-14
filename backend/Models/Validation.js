@@ -1,6 +1,6 @@
 const Joi= require("joi")
 
-//user validation schema
+//user personal data validation schema
 const userValidation = (data) => {
      const schema = Joi.object({
           name: Joi.string().min(6).required(),
@@ -31,6 +31,29 @@ const projectValidation = (data) => {
      return (schema.validate(data))
 }
 
+//Register validation schema
+const registerValidation = (data) => {
+     const schema = Joi.object({
+          name: Joi.string().min(6).required(),
+          email: Joi.string().min(6).required().email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }),
+          password:Joi.string().required().min(6)
+     });
+     return (schema.validate(data))
+}
+
+
+//Login validation schema
+const loginValidation = (data) => {
+     const schema = Joi.object({
+          email: Joi.string().min(6).required().email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }),
+          password:Joi.string().required().min(6)
+     });
+     return (schema.validate(data))
+}
+
+
+
+
 
 // //Link validation schema
 // const linkValidation = (data) => {
@@ -42,4 +65,6 @@ const projectValidation = (data) => {
 
 module.exports.userValidation = userValidation
 //module.exports.linkValidation=linkValidation
-module.exports.projectValidation=projectValidation
+module.exports.projectValidation = projectValidation
+module.exports.registerValidation = registerValidation
+module.exports.loginValidation=loginValidation
