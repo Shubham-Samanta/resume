@@ -26,6 +26,7 @@ router.post('/add/user',verify, async (req, res) => {
      }
      else
      {
+          const _id = req.user._id
           const name = req.body.name
           const about_me_1=req.body.about_me_1
           const about_me_2 = req.body.about_me_2
@@ -37,7 +38,13 @@ router.post('/add/user',verify, async (req, res) => {
           const facebook_link = req.body.facebook_link
           const insta_link = req.body.insta_link
           const newUserdata = new Userdata({
-               name, about_me_1, about_me_2, get_in_touch,email,phone,git_link,
+               _id,
+               name,
+               about_me_1,
+               about_me_2,
+               get_in_touch,
+               email, phone,
+               git_link,
                linkedin_link,
                facebook_link,
                insta_link,})
@@ -56,7 +63,8 @@ router.post('/add/project',verify, async (req, res) => {
           res.status(400).send(error.details[0].message)
      }
      else {
-          const user_id = req.body.user_id 
+          
+     const user_id = req.user._id
      const projectname = req.body.projectname
      const about_project = req.body.about_project
      const tech_used = req.body.ech_used

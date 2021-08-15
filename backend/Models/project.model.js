@@ -6,9 +6,9 @@ const linkarr = new Schema({
 })
 
 const projectSchema = new Schema({
-     user_id: { type: String, unique: true, minlength: 6, tirm: true },
-     projectname: { type: String, unique: true, minlength: 6, tirm: true },
-     about_project: { type: String, unique: true, minlength: 6, tirm: true },
+     user_id: { type: String,  minlength: 6, tirm: true },
+     projectname: { type: String,  unique: true,minlength: 6, tirm: true },
+     about_project: { type: String,  minlength: 6, tirm: true },
      tech_used: { type: [linkarr]},
      git_link: { type: String, unique: true, minlength: 6, tirm: true },
      project_link: { type: String, unique: true, minlength: 6, tirm: true },

@@ -21,7 +21,6 @@ const userValidation = (data) => {
 //project validation schema
 const projectValidation = (data) => {
      const schema = Joi.object({
-          user_id:Joi.string().min(6).required(),
           projectname:Joi.string().min(6).required(),
           about_project:Joi.string().min(6).required(),
           tech_used:Joi.array().items(Joi.object({link: Joi.string().required()})) ,
