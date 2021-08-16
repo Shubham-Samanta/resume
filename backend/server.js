@@ -7,6 +7,7 @@ require("dotenv").config()
 const app = express()
 const port = process.env.PORT || 5000
 const homepage = require("./Routes/homepage")
+const admin = require("./Routes/admin")
 const auth = require('./Routes/Auth')
 
 //middlewares
@@ -32,7 +33,8 @@ connection.once('open', ()=> {
 
 //route  middleware
 app.use('/portfolio',homepage)
-app.use('/admin', auth)
+app.use('/auth', auth)
+app.use('/admin', admin)
 
 app.listen(port, () => {
      console.log(`listening to port : ${port}`)
