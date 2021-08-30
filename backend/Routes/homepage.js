@@ -27,7 +27,7 @@ router.get('/',async (req, res) => {
      }
      else
      {
-          const k=await Userdata.aggregate([{
+          const data=await Userdata.aggregate([{
                $lookup: {
                        from: "projects",
                        localField: "_id",
@@ -37,7 +37,7 @@ router.get('/',async (req, res) => {
           },
           { $unwind: { path: "$projects_done", preserveNullAndEmptyArrays: true }},
           ])
-          res.send(k)
+          res.send(data)
      }
 })
 
