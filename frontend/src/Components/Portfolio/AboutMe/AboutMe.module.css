@@ -2,6 +2,43 @@
      padding: 0px;
      margin: 0px;
    }
-   .first {
-     font-size: 30px;
+   .minorContainer{
+    grid-area: CENTER;
+  }
+   .majorContainer {
+    font-family: 'Overpass', sans-serif;
+    font-style: normal;
+    padding: 20px 0px 20px 0px;
+    display: grid;
+    grid-template-columns: auto 616px auto;
+    grid-template-areas: ". CENTER .";
+   }
+   .headingNumber,.headingTitle{
+    font-size: 45px;
+  }
+  .headingNumber{
+    color: #E4572E;
+  }
+  .headingTitle{
+    color: #05386B;
+  }
+  .para{
+    color: #FFF4EC;
+    font-size: 20px;
+    padding: 20px 0px 0px 0px;
+
+  }
+  .titleContainer{
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+   }
+   .infoContainer
+   {
+    display: flex;
+    flex-direction: row;
+   }
+   .profilePic{
+    padding: 20px 0px 0px 20px;
+    height: 270px;;
    }

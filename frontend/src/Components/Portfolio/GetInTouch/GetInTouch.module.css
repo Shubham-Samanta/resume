@@ -2,6 +2,55 @@
      padding: 0px;
      margin: 0px;
    }
-   .first {
-     font-size: 30px;
+   .minorContainer{
+    grid-area: CENTER;
+  }
+   .majorContainer {
+    font-family: 'Overpass', sans-serif;
+    font-style: normal;
+    padding: 20px 0px 20px 0px;
+    display: grid;
+    grid-template-columns: auto 616px auto;
+    grid-template-areas: ". CENTER .";
    }
+   .titleContainer,.infoContainer{
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+   }
+   .infoContainer{
+    padding: 20px 0px 0px 0px;
+     gap: 16px;
+     justify-content: space-between;
+   }
+   .phoneContainer ,.emailContainer{
+    display: flex;
+    flex-direction: column;
+    
+   }
+   .phonePic,.emailPic{
+    display: flex;
+    flex-direction: row;
+    gap: 5px; 
+    align-items:flex-start;
+   }
+   .emailValue,.phoneValue,.headingNumber{
+     color: #E4572E;
+   }
+   .headingTitle,.email,.phone{
+     color: #05386B;
+   }
+   .para{
+     color: #FFF4EC;
+     font-size: 20px;
+     padding: 20px 0px 0px 0px;
+   }
+   .email,.emailValue,.phone,.phoneValue{
+     font-size: 25px;
+   }
+   .headingNumber,.headingTitle{
+     font-size: 45px;
+   }
+   /* .margin{
+     border-bottom:10px solid #FFF4EC;
+   } */

@@ -1,7 +1,45 @@
 * {
-     padding: 0px;
-     margin: 0px;
-   }
-   .first {
-     font-size: 30px;
-   }
+  padding: 0px;
+  margin: 0px;
+}
+.iconContainer{
+ grid-area: ICON;
+ padding: 0px 0px 0px 20px;
+}
+.menuContainer{
+  grid-area: MENU;
+ }
+.majorContainer {
+ font-family: 'Overpass', sans-serif;
+ font-style: normal;
+ padding: 20px 0px 20px 0px;
+ display: grid;
+ grid-template-columns: 70px auto auto;
+ grid-template-areas: "ICON . MENU";
+}
+.aboutGroup,.contactGroup,.projectGroup,.resumeGroup{
+  display: flex;
+  flex-direction: row;
+  margin: 0px 15px 0px 0px;
+}
+.resumebtn{
+  border: #E4572E solid 3px;
+  border-radius: 7px;
+  padding: 3px 4px 2px 4px;
+}
+.menuContainer{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items:center;
+  justify-content: flex-end;
+}
+.number,.resumebtn{
+  color: #E4572E;
+  font-size: 21px;
+}
+.btn{
+  color: #FFF4EC;
+  margin: 0px 0px 0px 5px;
+  font-size: 21px;
+}

@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@800&display=swap'); 
+
 * {
      padding: 0px;
      margin: 0px;
      background-color: #5CDB95;
-   }
-   .first {
-     font-size: 30px;
+
    }
