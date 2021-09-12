@@ -1,7 +1,39 @@
 * {
-     padding: 0px;
-     margin: 0px;
-   }
-   .first {
-     font-size: 30px;
-   }
+  padding: 0px;
+  margin: 0px;
+}
+.minorContainer{
+ grid-area: CENTER;
+}
+.majorContainer {
+ font-family: 'Overpass', sans-serif;
+ font-style: normal;
+ padding: 20px 0px 20px 0px;
+ display: grid;
+ grid-template-columns: auto 616px auto;
+ grid-template-areas: ". CENTER .";
+}
+.titleContainer{
+ display: flex;
+ flex-direction: row;
+ /* align-items: center; */
+}
+
+.headingNumber{
+  color: #E4572E;
+}
+.headingTitle{
+  color: #05386B;
+}
+.para{
+  color: #FFF4EC;
+  font-size: 20px;
+  padding: 20px 0px 0px 0px;
+}
+
+.headingNumber,.headingTitle{
+  font-size: 45px;
+}
+/* .margin{
+  border-bottom:10px solid #FFF4EC;
+} */

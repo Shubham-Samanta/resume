@@ -2,7 +2,7 @@ import classes from "../Introduction/Introduction.module.css"
 
 function Introduction(props)
 {
-     return (<div className={classes.first}>
+     return (
                <div className={classes.majorContainer}>
                               <div className={classes.minorContainer}>
                                    <div className={classes.titleContainer}>
@@ -17,6 +17,6 @@ function Introduction(props)
           
           
           
-     </div>)
+     )
 }
 export default Introduction

@@ -4,6 +4,7 @@ import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 import Introduction from "./Introduction/Introduction";
 import GetInTouch from "./GetInTouch/GetInTouch";
+import Projects from "./Projects/Projects"
 import axios from "axios"
 import React, { useState,useEffect } from "react"
 function Portfolio()
@@ -59,7 +60,8 @@ function Portfolio()
           <div className={classes.first}>
                <Header />
                <Introduction name={name } about_me_1={about_me_1 } />
-               <AboutMe about_me_2={ about_me_2}/>
+               <AboutMe about_me_2={about_me_2} />
+               <Projects/>
                <GetInTouch email={email} phone={phone} get_in_touch={ get_in_touch}/>
                <Footer/>
           </div>
