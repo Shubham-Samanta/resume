@@ -4,43 +4,19 @@ const Project = require("../Models/project.model")
 const { userValidation, projectValidation } = require("../Models/Validation")
 const verify = require("../middleware/verifyToken")
 
-//THIS IS FOR USER PROJECT DATA
-router.get('/',async (req, res) => {
-     const User = await Userdata.find()
-     if (!User)
-     {
-          res.send("something is wrong")
-     }
-     else
-     {
-          Project.find()
-          .then((projects)=>{res.json(projects)})
-          .catch((err)=>{res.status(400).json(err)})
-          console.log("hello")
-     }
-})
 
-//THIS IS FOR USER DATA
-// router.get('/',async (req, res) => {
-//      const User = await Userdata.find()
-//      if (!User)
-//      {
-//           res.send("something is wrong")
-//      }
-//      else
-//      {
-//           const data=await Userdata.aggregate([{
-//                $lookup: {
-//                        from: "projects",
-//                        localField: "_id",
-//                        foreignField: "user_id",
-//                        as: "projects_done"
-//                    }
-//           },
-//           { $unwind: { path: "$projects_done", preserveNullAndEmptyArrays: true }},
-//           ])
-//           res.send(data)
-//      }
-// })
+
+//To get the user data as well as the projets of that particular user
+router.get('/', async (req, res) => {
+     const data = [];
+     const User = await Userdata.find()
+     data.push(User[0])
+     Project.find({"user_id":User[0]. _id})
+          .then((projects) => {
+               data.push(projects)
+               res.json(data)
+          })
+          .catch((err)=>{res.status(400).json(err)})
+})
 
 module.exports=router

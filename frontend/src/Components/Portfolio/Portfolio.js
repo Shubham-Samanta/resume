@@ -20,6 +20,7 @@ function Portfolio()
      const [linkedin_link, setLinkedin_link] = useState()
      const [name, setName] = useState()
      const [phone, setPhone] = useState()
+     const [projectsdata,setProjectsdata]=useState()
      async function getData() {
           try {
                const response =await axios.get("http://localhost:5000/portfolio/")
@@ -34,6 +35,7 @@ function Portfolio()
                     setLinkedin_link(await response.data[0].linkedin_link)
                     setName(await response.data[0].name)
                     setPhone(await response.data[0].phone)
+                    setProjectsdata(await response.data[1])
                     
                }
           }
@@ -45,23 +47,24 @@ function Portfolio()
           getData();
      }, []);
      
-     console.log(about_me_1)
-     console.log(about_me_2)
-     console.log(email)
-     console.log(facebook_link)
-     console.log(get_in_touch)
-     console.log(git_link)
-     console.log(insta_link)
-     console.log(linkedin_link)
-     console.log(name)
-     console.log(phone)
-
+     // console.log(about_me_1)
+     // console.log(about_me_2)
+     // console.log(email)
+     // console.log(facebook_link)
+     // console.log(get_in_touch)
+     // console.log(git_link)
+     // console.log(insta_link)
+     // console.log(linkedin_link)
+     // console.log(name)
+     // console.log(phone)
+//      console.log("hii")
+//     console.log(projectsdata)
      return (
           <div className={classes.first}>
                <Header />
                <Introduction name={name } about_me_1={about_me_1 } />
                <AboutMe about_me_2={about_me_2} />
-               <Projects/>
+               <Projects projectsdata={projectsdata}/>
                <GetInTouch email={email} phone={phone} get_in_touch={ get_in_touch}/>
                <Footer/>
           </div>
