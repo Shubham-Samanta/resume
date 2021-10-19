@@ -20,22 +20,25 @@ function Portfolio()
      const [linkedin_link, setLinkedin_link] = useState()
      const [name, setName] = useState()
      const [phone, setPhone] = useState()
-     const [projectsdata,setProjectsdata]=useState()
+     const [projectsdata, setProjectsdata] = useState()
+     const [uid, setUid] = useState()
+
      async function getData() {
           try {
                const response =await axios.get("http://localhost:5000/portfolio/")
                if (response.data.length > 0) {
-                    setAbout_me_1(await response.data[0].about_me_1)
-                    setAbout_me_2(await response.data[0].about_me_2)
-                    setEmail(await response.data[0].email)
-                    setFacebook_link(await response.data[0].facebook_link)
-                    setGet_in_touch(await response.data[0].get_in_touch)
-                    setGit_link(await response.data[0].git_link)
-                    setInsta_link(await response.data[0].insta_link)
-                    setLinkedin_link(await response.data[0].linkedin_link)
-                    setName(await response.data[0].name)
-                    setPhone(await response.data[0].phone)
-                    setProjectsdata(await response.data[1])
+                    setAbout_me_1( response.data[0].about_me_1)
+                    setAbout_me_2( response.data[0].about_me_2)
+                    setEmail( response.data[0].email)
+                    setFacebook_link( response.data[0].facebook_link)
+                    setGet_in_touch( response.data[0].get_in_touch)
+                    setGit_link( response.data[0].git_link)
+                    setInsta_link( response.data[0].insta_link)
+                    setLinkedin_link( response.data[0].linkedin_link)
+                    setName( response.data[0].name)
+                    setPhone( response.data[0].phone)
+                    setProjectsdata(response.data[1])
+                    setUid(response.data[1]. _id)
                     
                }
           }
@@ -58,7 +61,7 @@ function Portfolio()
      // console.log(name)
      // console.log(phone)
 //      console.log("hii")
-//     console.log(projectsdata)
+//  console.log(projectsdata)
      return (
           <div className={classes.first}>
                <Header />
