@@ -1,6 +1,7 @@
 import React from "react"
 import classes from "../Header/Header.module.css"
 import Slogo from "../../../Assets/Slogo.svg"
+import {Link} from 'react-router-dom';
 function Header()
 {
      return (<div className={classes.majorContainer}>
@@ -21,6 +22,12 @@ function Header()
                     <div className={classes.number}>03.</div>
                     <div className={classes.btn}>contact</div>
                </div>
+               <Link to="/User/login" style={{textDecoration:"none"}}>
+               <div className={classes.contactGroup}>
+                    <div className={classes.number}>04.</div>
+                    <div className={classes.btn}>admin</div>
+               </div>
+               </Link>
                <div className={classes.resumeGroup}>
                     <div className={classes.resumebtn}>resume</div>
                </div>

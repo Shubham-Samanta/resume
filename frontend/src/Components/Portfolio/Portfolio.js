@@ -25,7 +25,7 @@ function Portfolio()
 
      async function getData() {
           try {
-               const response =await axios.get("http://localhost:5000/portfolio/")
+               const response =await axios.get("http://localhost:5001/portfolio/")
                if (response.data.length > 0) {
                     setAbout_me_1( response.data[0].about_me_1)
                     setAbout_me_2( response.data[0].about_me_2)

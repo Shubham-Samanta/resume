@@ -5,7 +5,7 @@ const mongoose = require("mongoose")
 const cookie_pareser = require("cookie-parser")
 require("dotenv").config()
 const app = express()
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 5001
 const homepage = require("./Routes/homepage")
 const admin = require("./Routes/admin")
 const auth = require('./Routes/Auth')

@@ -88,7 +88,7 @@ router.post("/login", async (req, res) => {
                     const entoken = cryptr.encrypt(token); 
                     //,path:"/user"  ,domain:"http://localhost:5000"
                     res.cookie('authtoken',entoken,{httpOnly:true,sameSite:"lax"})
-                    res.send("you are logged in")
+                    res.json({status:true})
                }
 
           }
