@@ -22,6 +22,7 @@ const Login = ()=>{
             if (response.data.status==true) 
             {
                 console.log("hell ya")
+                return (<Redirect to="/Admin" />);
                 // history.push("/Admin")
                 }
         }

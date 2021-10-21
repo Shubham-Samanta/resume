@@ -4,7 +4,7 @@ import classes from './style.module.css';
 import {AnimatePresence, motion} from 'framer-motion';
 import { useState, useEffect } from "react"
 import { Redirect } from 'react-router-dom';
-
+import axios from "axios"
 
 const Signup = ()=>{
     const [username, setName] = useState("")
@@ -12,11 +12,29 @@ const Signup = ()=>{
     const [password, setPassword] = useState("")
     const [authyep, setAuth] = useState(false);
     
-    
+    async function sendData(signupCred) {
+        try {
+            const response = await axios.post("http://localhost:5001/auth/register", signupCred)
+            console.log(response)
+            
+            if (response.data.status==true) 
+            {
+                console.log("hell ya")
+                return (<Redirect to="/Admin" />);
+                // history.push("/Admin")
+                }
+        }
+        catch(err){console.log(err)}
+   }
 
     const signupclicked = (e) => {
         e.preventDefault();
-       
+        const signupCred = {
+            name: username,
+            email: email,
+            password: password,   
+       }
+        sendData(signupCred)
     }
 
     //redirect to desired page if auth is complete,setAuth to true if the user is authenticated
