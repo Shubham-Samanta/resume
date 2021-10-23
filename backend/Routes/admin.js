@@ -1,5 +1,5 @@
 const router = require("express").Router()
-const Userdata=require("../Models/user.model")
+const Userdata = require("../Models/user.model")
 const Project = require("../Models/project.model")
 const { userValidation, projectValidation } = require("../Models/Validation")
 const verify = require("../middleware/verifyToken")
@@ -33,12 +33,22 @@ router.post('/add/userdata',verify, async (req, res) => {
                git_link,
                linkedin_link,
                facebook_link,
-               insta_link,})
-          try {
-               const info = await newUserdata.save()
-               res.json('user data added')
+               insta_link,
+          })
+          if (await Userdata.findOne({ _id: _id  }))
+          {
+               res.json({ _id: _id ,message: 'user found'})
           }
-               catch(err){res.status(400).json(err)}  
+          else
+          {
+               // try {
+               //      const info = await newUserdata.save()
+               //      res.json('user data added')
+               // }
+               //      catch(err){res.status(400).json(err)}
+               res.send("we can add user")
+               }
+            
           }
      
 })

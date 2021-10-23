@@ -63,7 +63,7 @@ function Portfolio()
 //      console.log("hii")
 //  console.log(projectsdata)
      return (
-          <div className={classes.first}>
+          <div>
                <Header />
                <Introduction name={name } about_me_1={about_me_1 } />
                <AboutMe about_me_2={about_me_2} />

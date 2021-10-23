@@ -11,6 +11,7 @@ const Signup = ()=>{
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [authyep, setAuth] = useState(false);
+    // let history = useHistory()
     
     async function sendData(signupCred) {
         try {
