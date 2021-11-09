@@ -4,7 +4,9 @@ const Project = require("../Models/project.model")
 const { userValidation, projectValidation } = require("../Models/Validation")
 const verify = require("../middleware/verifyToken")
 const mongoose = require('mongoose')
-router.post('/add/userdata',verify, async (req, res) => {
+router.post('/add/userdata',
+     verify,
+     async (req, res) => {
      const {error}=userValidation(req.body)
      if (error)
      {
@@ -12,7 +14,9 @@ router.post('/add/userdata',verify, async (req, res) => {
      }
      else
      {
-          const _id = req.user._id
+          // const _id ="61236974d539e848ac4ac2a9"
+
+          const _id =req.user._id
           const name = req.body.name
           const about_me_1=req.body.about_me_1
           const about_me_2 = req.body.about_me_2
@@ -35,17 +39,32 @@ router.post('/add/userdata',verify, async (req, res) => {
                facebook_link,
                insta_link,
           })
+          const updateduserData={
+               name,
+               about_me_1,
+               about_me_2,
+               get_in_touch,
+               email, phone,
+               git_link,
+               linkedin_link,
+               facebook_link,
+               insta_link,
+          }
           if (await Userdata.findOne({ _id: _id  }))
           {
+               try {
+                    const info = await Userdata.updateOne({_id:_id},updateduserData)
+               }
+                    catch(err){res.status(400).json(err)}
                res.json({ _id: _id ,message: 'user found'})
           }
           else
           {
-               // try {
-               //      const info = await newUserdata.save()
-               //      res.json('user data added')
-               // }
-               //      catch(err){res.status(400).json(err)}
+               try {
+                    const info = await newUserdata.save()
+                    res.json('user data added')
+               }
+                    catch(err){res.status(400).json(err)}
                res.send("we can add user")
                }
             

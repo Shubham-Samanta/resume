@@ -27,6 +27,25 @@
     gap: 20px;
     
    }
+   .inputBox{
+    border-left: 2px  solid #E4572E;
+    border-right-style: hidden;
+    border-bottom: 2px solid #E4572E;
+    border-top-style:hidden;
+    background-color: #5CDB95;
+    transform: translateY(-5px);
+  }
+  .inputBoxDecor{
+    border-left: 2px  solid #05386B;
+    border-right: 2px  solid #05386B;
+    border-bottom: 2px solid #05386B;
+    border-top: 2px  solid #05386B;
+    background-color: #5CDB95;
+    width:150px ;
+    height: 20px;
+    padding:0px 0px 2px 6px;
+    margin-bottom: 15px;
+  }
    /* .titleContainer{
     display: flex;
     flex-direction: column;

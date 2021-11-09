@@ -35,7 +35,7 @@ router.post('/register', async (req, res) => {
           const password = hashedpassword
           const newUser = new userModel({name,email,password});
           try {const hola= await newUser.save()
-               res.send("you have been registered")}
+               res.json({status:true})}
           catch (err) { res.status(400).send(err) }
           }
      }     
@@ -87,7 +87,9 @@ router.post("/login", async (req, res) => {
                     //sending cookies to the client side
                     const entoken = cryptr.encrypt(token); 
                     //,path:"/user"  ,domain:"http://localhost:5000"
-                    res.cookie('authtoken',entoken,{httpOnly:true,sameSite:"lax"})
+                    res.cookie('authtoken', entoken
+                         , { httpOnly: false, sameSite: "none",secure: false }
+                    )
                     res.json({status:true})
                }
 

@@ -43,31 +43,31 @@ const NewProject = ()=>{
                
                <div className={classes.columnOne}>
                <div className={classes.para}>New Project</div>
-                    <input type="text"
+                    <div className={classes.inputBoxDecor}><input className={classes.inputBox} type="text"
                                  placeholder="Project Name"
                                  value={projectName}
                                  onChange={(event) => { setProjectName(event.target.value) }}
-                    />
-                    <input type="text"
+                    /></div>
+                    <div className={classes.inputBoxDecor}><input className={classes.inputBox} type="text"
                                  placeholder="About Project"
                                  value={aboutProject}
                                  onChange={(event) => { setAboutProject(event.target.value) }}
-                    />
-                    <input type="text"
+                    /></div>
+                    <div className={classes.inputBoxDecor}><input className={classes.inputBox} type="text"
                                  placeholder="Tech Used"
                                  value={techUsed}
                                  onChange={(event) => { setTechUsed(event.target.value) }}
-                    />
-                    <input type="text"
+                    /></div>
+                    <div className={classes.inputBoxDecor}><input className={classes.inputBox} type="text"
                                  placeholder="Git Link"
                                  value={gitLink}
                                  onChange={(event) => { setGitLink(event.target.value) }}
-                    />
-                    <input type="text"
+                    /></div>
+                    <div className={classes.inputBoxDecor}><input className={classes.inputBox} type="text"
                                  placeholder="Project Link"
                                  value={projectLink}
                                  onChange={(event) => { setProjectLink(event.target.value) }}
-                    />
+                    /></div>
                </div>
 
                <div className={classes.columnTwo}></div>

@@ -1,29 +1,22 @@
 import React from "react";
 import Portfolio from "../src/Components/Portfolio/Portfolio"
-import {BrowserRouter as Router,Route, Switch } from 'react-router-dom'
-import { AnimatePresence, motion } from 'framer-motion';
-import User from './Components/login/user'
+import {Route, Routes } from 'react-router-dom'
 import Admin from './Components/AdminPanel/Admin'
+import Login from './Components/login/form/login'
+import Signup from './Components/login/form/signup'
 function App()
 {
   return (
-    <Router>
+    
       <div className={App}>
-        <Switch>
-          <Route exact path="/">
-            <Portfolio/>
-          </Route>
-          <Route  path="/User" >
-          <AnimatePresence>
-            <User />
-          </AnimatePresence>
-          </Route>
-          <Route  path="/Admin">
-            <Admin/>
-          </Route>
-        </Switch>
+        <Routes>
+          <Route  path="/" element={<Portfolio/>}/>
+          <Route  path="/Admin" element={<Admin/>}/>
+          <Route  path="/login" element={<Login />}/>
+          <Route  path="/signup" element={<Signup />}/>
+        </Routes>
     </div>
-    </Router>
+   
     
   )
 }

@@ -53,59 +53,60 @@ const PersonalData = ()=>{
           <div className={classes.majorContainer}>
                
                <div className={classes.columnOne}>
-                    <input type="text"
+               <div className={classes.inputBoxDecor}><input className={classes.inputBox} type="text"
                                  placeholder="Name"
                                  value={name}
                                  onChange={(event) => { setName(event.target.value) }}
-                    />
-                    <input type="text"
+                    /></div>
+                    <div className={classes.inputBoxDecor}><input className={classes.inputBox} type="text"
                                  placeholder="About Me Part 1"
-                                 value={aboutMePart2}
-                                 onChange={(event) => { setAboutMePart1(event.target.value) }}
-                    />
-                    <input type="text"
-                                 placeholder="About Me Part 2"
                                  value={aboutMePart1}
+                                 onChange={(event) => { setAboutMePart1(event.target.value) }}
+                    /></div>
+                    <div className={classes.inputBoxDecor}><input className={classes.inputBox} type="text"
+                                 placeholder="About Me Part 2"
+                                 value={aboutMePart2}
                                  onChange={(event) => { setAboutMePart2(event.target.value) }}
-                    />
-                    <input type="text"
+                    /></div>
+                    <div className={classes.inputBoxDecor}><input className={classes.inputBox} type="text"
                                  placeholder="Get In Touch"
                                  value={getInTouch}
                                  onChange={(event) => { setGetInTouch(event.target.value) }}
-                    />
-                    <input type="text"
+                    /></div>
+                    <div className={classes.inputBoxDecor}><input className={classes.inputBox} type="text"
                                  placeholder="Email"
                                  value={email}
                                  onChange={(event) => { setEmail(event.target.value) }}
-                    />
+                    /></div>
                </div>
 
                <div className={classes.columnTwo}>
-               <input type="text"
+               <div className={classes.inputBoxDecor}><input className={classes.inputBox} type="text"
                                  placeholder="Phone"
                                  value={phone}
                                  onChange={(event) => { setPhone(event.target.value) }}
-                    />
-                    <input type="text"
+                    /></div>
+                    <div className={classes.inputBoxDecor}><input className={classes.inputBox} type="text"
                                  placeholder="Git hub Link"
                                  value={gitLink}
                                  onChange={(event) => { setGitLink(event.target.value) }}
-                    />
-                    <input type="text"
+                    /></div>
+                    <div className={classes.inputBoxDecor}><input className={classes.inputBox} type="text"
                                  placeholder="Facebook Link"
                                  value={facebookLink}
                                  onChange={(event) => { setFacebookLink(event.target.value) }}
-                    />
-                    <input type="text"
+                    /></div>
+                    <div className={classes.inputBoxDecor}><input className={classes.inputBox} type="text"
                                  placeholder="Linked-In Link"
                                  value={linkedinLink}
                                  onChange={(event) => { setLinkedInLink(event.target.value) }}
-                    />
-                    <input type="text"
-                                 placeholder="Instagram Link"
+                    /></div>
+                    <div className={classes.inputBoxDecor}><input className={classes.inputBox} type="text"
+                     placeholder="Instagram Link"
+                    
                                  value={instaLink}
                                  onChange={(event) => { setInstaLink(event.target.value) }}
-                    />
+                    /></div>
                </div>
 
                          <button className={classes.button} onClick={loginclicked}>Add Data</button>              

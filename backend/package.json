@@ -4,7 +4,7 @@
   "description": "backend of my portfolio website",
   "main": "index.js",
   "scripts": {
-    "start":"node server"
+    "start":"nodemon server.js"
   },
   "repository": {
     "type": "git",

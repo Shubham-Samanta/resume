@@ -26,6 +26,7 @@ const gendb=mongoose.connect(uri, {
 err=>{console.log(err);}
 )
 
+
 const connection = mongoose.connection
 connection.once('open', ()=> {
      console.log("mongoDB connection established sucessfully")
