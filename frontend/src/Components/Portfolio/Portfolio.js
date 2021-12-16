@@ -64,16 +64,16 @@ function Portfolio(props)
 //      console.log("hii")
 //  console.log(projectsdata)
      
-     // if (isLoading)
-     // {
-     //      return (
-     //           <div>
-     //                <Loader />
-     //           </div>
-     //      )
-     // }
-     // else
-     // {
+     if (isLoading)
+     {
+          return (
+               <div>
+                    <Loader />
+               </div>
+          )
+     }
+     else
+     {
           return (
                <div>
                     <Header />
@@ -85,7 +85,7 @@ function Portfolio(props)
                </div>
           )
           }
-     // }
+     }
     
 // }
 export default Portfolio
