@@ -11,11 +11,12 @@
 }
 .columnOne{
      grid-area: columnOne;
+     color:#05386B
 }
 
 .columnTwo{
      grid-area: columnTwo;
-     
+     color:#05386B
      
 }
 .majorContainer {
@@ -23,7 +24,7 @@
      font-style: normal;
      padding: 20px 0px 20px 0px;
      display: grid;
-     grid-template-columns: 308px 308px;
+     grid-template-columns: 350px 350px;
      grid-template-areas: "columnOne columnTwo";
     }
 .projectInfo{

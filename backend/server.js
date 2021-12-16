@@ -2,7 +2,7 @@
 const express = require("express")
 const cors = require("cors")
 const mongoose = require("mongoose")
-const cookie_pareser = require("cookie-parser")
+const cookie_parser = require("cookie-parser")
 require("dotenv").config()
 const app = express()
 const port = process.env.PORT || 5001
@@ -11,9 +11,11 @@ const admin = require("./Routes/admin")
 const auth = require('./Routes/Auth')
 
 //middlewares
-app.use(cors())
+app.use(cors({
+     origin: 'http://localhost:3000',
+credentials: true}))
 app.use(express.json())
-app.use(cookie_pareser())
+app.use(cookie_parser())
 
 //connect to DB
 const uri = process.env.ATLAS_URI

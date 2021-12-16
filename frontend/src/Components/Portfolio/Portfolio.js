@@ -1,16 +1,16 @@
 import classes from "../../../src/Components/Portfolio/Portfolio.module.css"
 import AboutMe from "./AboutMe/AboutMe";
-import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 import Introduction from "./Introduction/Introduction";
 import GetInTouch from "./GetInTouch/GetInTouch";
 import Projects from "./Projects/Projects"
 import axios from "axios"
-import React, { useState,useEffect } from "react"
-function Portfolio()
+import React, { useState, useEffect } from "react"
+import Loader from "../Loader/loader"
+function Portfolio(props) 
 {
-
-     const [about_me_1, setAbout_me_1] = useState()
+     const [isLoading,setisLoading] = useState(true)
+     const [about_me_1, setAbout_me_1] = useState("")
      const [about_me_2, setAbout_me_2] = useState()
      const [email, setEmail] = useState()
      const [facebook_link, setFacebook_link] = useState()
@@ -27,18 +27,19 @@ function Portfolio()
           try {
                const response =await axios.get("http://localhost:5001/portfolio/")
                if (response.data.length > 0) {
-                    setAbout_me_1( response.data[0].about_me_1)
-                    setAbout_me_2( response.data[0].about_me_2)
-                    setEmail( response.data[0].email)
-                    setFacebook_link( response.data[0].facebook_link)
-                    setGet_in_touch( response.data[0].get_in_touch)
-                    setGit_link( response.data[0].git_link)
-                    setInsta_link( response.data[0].insta_link)
-                    setLinkedin_link( response.data[0].linkedin_link)
-                    setName( response.data[0].name)
-                    setPhone( response.data[0].phone)
+                    setAbout_me_1(response.data[0].about_me_1)
+                    setAbout_me_2(response.data[0].about_me_2)
+                    setEmail(response.data[0].email)
+                    setFacebook_link(response.data[0].facebook_link)
+                    setGet_in_touch(response.data[0].get_in_touch)
+                    setGit_link(response.data[0].git_link)
+                    setInsta_link(response.data[0].insta_link)
+                    setLinkedin_link(response.data[0].linkedin_link)
+                    setName(response.data[0].name)
+                    setPhone(response.data[0].phone)
                     setProjectsdata(response.data[1])
-                    setUid(response.data[1]. _id)
+                    setUid(response.data[1]._id)
+                    setTimeout(()=>{setisLoading(false)},2000)
                     
                }
           }
@@ -62,15 +63,29 @@ function Portfolio()
      // console.log(phone)
 //      console.log("hii")
 //  console.log(projectsdata)
-     return (
-          <div>
-               <Header />
-               <Introduction name={name } about_me_1={about_me_1 } />
-               <AboutMe about_me_2={about_me_2} />
-               <Projects projectsdata={projectsdata}/>
-               <GetInTouch email={email} phone={phone} get_in_touch={ get_in_touch}/>
-               <Footer/>
-          </div>
-     )
-}
+     
+     // if (isLoading)
+     // {
+     //      return (
+     //           <div>
+     //                <Loader />
+     //           </div>
+     //      )
+     // }
+     // else
+     // {
+          return (
+               <div>
+                    <Header />
+                    <Introduction name={name } about_me_1={about_me_1 } />
+                    <AboutMe about_me_2={about_me_2} />
+                    <Projects projectsdata={projectsdata}/>
+                    <GetInTouch email={email} phone={phone} get_in_touch={ get_in_touch}/>
+                    {/* <Footer/> */}
+               </div>
+          )
+          }
+     // }
+    
+// }
 export default Portfolio

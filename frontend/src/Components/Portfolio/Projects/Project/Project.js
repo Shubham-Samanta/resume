@@ -1,17 +1,28 @@
-import React from "react"
+import React,{useEffect} from "react"
 import classes from "./Project.module.css"
 import Project1 from "../../../../Assets/Project1.png"
 import Github from "../../../../Assets/github.svg"
 import Website from "../../../../Assets/website.svg"
-function AboutMe(props)
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+function Project(props)
 {
      
+     useEffect(() => {
+          AOS.init({
+               easing: 'ease-in',
+               delay: 1000,
+               once:true,
+          })
+     })
           if (props.num % 2 == 0) {
                return (
-                    <div className={classes.majorContainer}>
-                         <div className={classes.columnOne}>
-                              <div className={classes.projectImage}><img src={Project1} style={{ width: 260 }}
-                              alt="Project1" /></div>
+                    <div data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-duration="1000" className={classes.majorContainer}>
+                         <div  className={classes.columnOne}>
+                              <div className={classes.projectImage}>
+                                   <img src={Project1} style={{ width: 260 }}
+                                        alt="Project1" />
+                              </div>
                               <div className={classes.techUsed}>{props.tech_used}</div>
                          </div>
                          
@@ -44,15 +55,15 @@ function AboutMe(props)
           else
           {
                return (
-                    <div className={classes.majorContainer}>
-                         <div className={classes.columnTwo}>
-                              <div className={classes.projectImage}><img src={Project1} style={{ width: 260 }}
+                    <div data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-duration="1000" className={classes.majorContainer}>
+                         <div  className={classes.columnTwo} style={{ display: "block" }}>
+                              <div className={classes.projectImage} style={{ float: "right"}}><img src={Project1} style={{ width: 260 }}
                               alt="Project1" /></div>
                               <div className={classes.techUsed}>{props.tech_used}</div>
                          </div>
                          
           
-                         <div className={classes.columnOne}>
+                         <div  className={classes.columnOne}>
                               <div className={classes.projectInfo} style={{ alignItems: "flex-end" }}> 
                                    <div className={classes.title}>Featured Project</div>
                                    <div className={classes.projectName}>{props.projectname}</div>
@@ -78,4 +89,4 @@ function AboutMe(props)
                )
           }
 }
-export default AboutMe
+export default Project
