@@ -15,7 +15,7 @@
     font-style: normal;
     /* padding: 80px 0px 20px 0px; */
     display: grid;
-    grid-template-columns: auto 700px auto;
+    grid-template-columns: auto 800px auto;
     grid-template-areas: ". CENTER .";
    
    }

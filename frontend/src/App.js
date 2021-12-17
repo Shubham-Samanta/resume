@@ -4,11 +4,12 @@ import {Route, Routes } from 'react-router-dom'
 import Admin from './Components/AdminPanel/Admin'
 import Login from './Components/login/form/login'
 import Signup from './Components/login/form/signup'
+import classes from '../src/App.module.css'
 function App()
 {
   
     return (
-      <div className={App}>
+      <div className={classes.App}>
         <Routes>
           <Route path="/"
             element={

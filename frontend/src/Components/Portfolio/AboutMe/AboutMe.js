@@ -28,7 +28,7 @@ function AboutMe(props)
                          <div className={classes.para}><div >{props.about_me_2}</div></div>
                               <div className={classes.profilePic}>
                                   
-                                   <img src={Profile} style={{ width: 260 ,borderRadius:"5%" }}
+                                   <img src={Profile} style={{ width: 300 ,borderRadius:"2%" }}
                                         alt="Profile picture" />
                                    
                                    

@@ -19,9 +19,12 @@ function Project(props)
                return (
                     <div data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-duration="1000"
                          className={classes.majorContainer}>
+
                          <div   className={classes.columnOne}>
-                              <div className={classes.projectImage}>
-                                   <img src={Project1} style={{ width: 400 }}
+                              <div className={classes.projectImage}
+                                   style={{ float: "right" }}
+                              >
+                                   <img src={Project1} style={{ width: 550 }}
                                         alt="Project1" />
                               </div>
                               <div className={classes.techUsed}>{props.tech_used}</div>
@@ -58,24 +61,26 @@ function Project(props)
                return (
                     <div data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-duration="1000"
                                   className={classes.majorContainer}>
-                         <div   style={{gridArea: "columnTwo"}} style={{ display: "block" }}>
-                              <div className={classes.projectImage} style={{ float: "right"}}><img src={Project1} style={{ width: 400 }}
-                              alt="Project1" /></div>
+                         <div className={classes.columnTwo}>
+                              <div className={classes.projectImage}>
+                                   <img src={Project1} style={{ width: 550 }}
+                                   alt="Project1" />
+                              </div>
                               <div className={classes.techUsed}>{props.tech_used}</div>
                          </div>
                          
           
                          <div  className={classes.columnOne}>
                               <div className={classes.projectInfo} style={{ alignItems: "flex-end" }}> 
-                                   <div className={classes.title}>Featured Project</div>
-                                   <div className={classes.projectName}>{props.projectname}</div>
+                              <div className={classes.title}>Featured Project</div>
+                              <div className={classes.projectName}>{props.projectname}</div>
                               </div>
           
                               <div className={classes.backGround} style={{ textAlign: "right" }}>
                                    <div className={classes.aboutProject}>{props.about_project}</div>    
                               </div>
           
-                              <div className={classes.linksContainer} style={{ justifyContent: "flex-start" }}>
+                              <div className={classes.linksContainer} style={{ justifyContent: "flex-end" }}>
                                         <a href={props.git_link} style={{backgroundColor: "transparent"}}>
                                              <img src={Github} style={{ width: 22 ,backgroundColor: "transparent"}}
                                              alt="Github icon" />

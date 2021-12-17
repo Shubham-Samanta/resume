@@ -11,12 +11,14 @@
 }
 .columnOne{
      grid-area: columnOne;
-     color:#05386B
+     color:#05386B;
+     background-color:transparent;
 }
 
 .columnTwo{
      grid-area: columnTwo;
-     color:#05386B
+     color:#05386B;
+     background-color:transparent
      
 }
 .majorContainer {
@@ -24,7 +26,7 @@
      font-style: normal;
      padding: 20px 0px 20px 0px;
      display: grid;
-     grid-template-columns: 325px 50px 325px;
+     grid-template-columns: 350px 100px 350px;
      grid-template-areas: "columnTwo . columnOne";
     }
 .projectInfo{
@@ -32,6 +34,7 @@
      flex-direction: column;
      align-items: flex-start;
      padding: 10px;
+     background-color: transparent;
     }
     .title,.projectName{
          width: fit-content;
@@ -44,7 +47,7 @@
 .linksContainer{
      display: flex;
      flex-direction: row;
-     justify-content: flex-end;
+     justify-content: flex-start;
      align-content: center;
      background-color: transparent;
      padding: 8px 3px 0px 3px;
