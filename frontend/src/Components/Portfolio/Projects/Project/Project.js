@@ -1,6 +1,6 @@
 import React,{useEffect} from "react"
 import classes from "./Project.module.css"
-import Project1 from "../../../../Assets/Project1.png"
+import Project1 from "../../../../Assets/Project1.jpg"
 import Github from "../../../../Assets/github.svg"
 import Website from "../../../../Assets/website.svg"
 import AOS from 'aos'
@@ -11,23 +11,24 @@ function Project(props)
      useEffect(() => {
           AOS.init({
                easing: 'ease-in',
-               delay: 1000,
+               // delay: 1000,
                once:true,
           })
      })
           if (props.num % 2 == 0) {
                return (
-                    <div data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-duration="1000" className={classes.majorContainer}>
-                         <div  className={classes.columnOne}>
+                    <div data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-duration="1000"
+                         className={classes.majorContainer}>
+                         <div   className={classes.columnOne}>
                               <div className={classes.projectImage}>
-                                   <img src={Project1} style={{ width: 260 }}
+                                   <img src={Project1} style={{ width: 350 }}
                                         alt="Project1" />
                               </div>
                               <div className={classes.techUsed}>{props.tech_used}</div>
                          </div>
                          
           
-                         <div className={classes.columnTwo}>
+                         <div  className={classes.columnTwo}>
                               <div className={classes.projectInfo}>
                                    <div className={classes.title}>Featured Project</div>
                                    <div className={classes.projectName}>{props.projectname}</div>
@@ -55,9 +56,10 @@ function Project(props)
           else
           {
                return (
-                    <div data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-duration="1000" className={classes.majorContainer}>
-                         <div  className={classes.columnTwo} style={{ display: "block" }}>
-                              <div className={classes.projectImage} style={{ float: "right"}}><img src={Project1} style={{ width: 260 }}
+                    <div data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-duration="1000"
+                                  className={classes.majorContainer}>
+                         <div   style={{gridArea: "columnTwo"}} style={{ display: "block" }}>
+                              <div className={classes.projectImage} style={{ float: "right"}}><img src={Project1} style={{ width: 350 }}
                               alt="Project1" /></div>
                               <div className={classes.techUsed}>{props.tech_used}</div>
                          </div>

@@ -17,14 +17,14 @@ function AboutMe(props)
           <div className={classes.majorContainer}>
                <div className={classes.minorContainer}>
                     <div>
-                    <div data-aos="fade-down" data-aos-anchor-placement="bottom-bottom" data-aos-duration="800" className={classes.titleContainer}>
+                    <div data-aos="fade-down" data-aos-anchor-placement="center-bottom" data-aos-duration="1000" className={classes.titleContainer}>
                                    <div className={classes.headingNumber}>01.</div>
                                    <div className={classes.headingTitle}>About Me</div>
                          </div>
                
                               
               
-                    <div data-aos="fade-down" data-aos-anchor-placement="center-bottom" data-aos-duration="1000" className={classes.infoContainer}>
+                    <div data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" className={classes.infoContainer}>
                          <div className={classes.para}><div >{props.about_me_2}</div></div>
                               <div className={classes.profilePic}>
                                   

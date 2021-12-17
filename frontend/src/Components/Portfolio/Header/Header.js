@@ -33,7 +33,7 @@ function Header()
                     <div className={classes.btn}>contact</div>
                </div>
                <Link to="/login" style={{textDecoration:"none"}}>
-               <div data-aos="fade-down" data-aos-duration="2500" className={classes.contactGroup}>
+               <div data-aos="fade-down" data-aos-duration="2500" className={classes.adminGroup}>
                     <div className={classes.number}>04.</div>
                     <div className={classes.btn}>admin</div>
                </div>

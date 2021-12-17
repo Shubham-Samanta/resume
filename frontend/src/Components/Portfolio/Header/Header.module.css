@@ -17,10 +17,11 @@
  grid-template-columns: 70px auto auto;
  grid-template-areas: "ICON . MENU";
 }
-.aboutGroup,.contactGroup,.projectGroup,.resumeGroup{
+.aboutGroup,.contactGroup,.projectGroup,.resumeGroup,.adminGroup{
   display: flex;
   flex-direction: row;
   margin: 0px 15px 0px 0px;
+  font-size: 21px;
 }
 .resumebtn{
   border: #E4572E solid 3px;
@@ -36,10 +37,23 @@
 }
 .number,.resumebtn{
   color: #E4572E;
-  font-size: 21px;
+  /* font-size: 21px; */
 }
 .btn{
   color: #FFF4EC;
   margin: 0px 0px 0px 5px;
-  font-size: 21px;
+  /* font-size: 21px; */
+}
+.btn:hover{
+  
+  color: #E4572E
+}
+.resumebtn:hover{
+  font-size: 25px;
+  border: #05386B solid 3px;
+  border-radius: 7px;
+  color: #05386B
+}
+.aboutGroup:hover,.contactGroup:hover,.projectGroup:hover,.adminGroup:hover{
+  font-size: 25px;
 }

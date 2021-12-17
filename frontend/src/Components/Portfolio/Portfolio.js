@@ -39,7 +39,7 @@ function Portfolio(props)
                     setPhone(response.data[0].phone)
                     setProjectsdata(response.data[1])
                     setUid(response.data[1]._id)
-                    setTimeout(()=>{setisLoading(false)},2000)
+                    setTimeout(()=>{setisLoading(false)},1200)
                     
                }
           }

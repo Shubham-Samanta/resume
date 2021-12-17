@@ -8,7 +8,7 @@ function Projects({projectsdata=[]})
 {useEffect(() => {
      AOS.init({
           easing: 'ease-in',
-          delay: 1000,
+          // delay: 1000,
           once:true,
      })
 })
