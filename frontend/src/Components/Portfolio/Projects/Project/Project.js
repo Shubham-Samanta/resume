@@ -21,7 +21,7 @@ function Project(props)
                          className={classes.majorContainer}>
                          <div   className={classes.columnOne}>
                               <div className={classes.projectImage}>
-                                   <img src={Project1} style={{ width: 350 }}
+                                   <img src={Project1} style={{ width: 400 }}
                                         alt="Project1" />
                               </div>
                               <div className={classes.techUsed}>{props.tech_used}</div>
@@ -59,7 +59,7 @@ function Project(props)
                     <div data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-duration="1000"
                                   className={classes.majorContainer}>
                          <div   style={{gridArea: "columnTwo"}} style={{ display: "block" }}>
-                              <div className={classes.projectImage} style={{ float: "right"}}><img src={Project1} style={{ width: 350 }}
+                              <div className={classes.projectImage} style={{ float: "right"}}><img src={Project1} style={{ width: 400 }}
                               alt="Project1" /></div>
                               <div className={classes.techUsed}>{props.tech_used}</div>
                          </div>
